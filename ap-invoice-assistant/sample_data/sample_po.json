@@ -1,0 +1,12 @@
+{
+  "po_number": "PO-4521",
+  "vendor": "Northwind Office Supplies Ltd.",
+  "tax_rate": 0.08,
+  "lines": [
+    {"line_no": 1, "sku": "NB-1001", "description": "A4 Notebooks (Pack of 10)", "qty": 50, "unit_price": 4.50},
+    {"line_no": 2, "sku": "PN-2003", "description": "Blue Ballpoint Pens (Box of 50)", "qty": 20, "unit_price": 8.00},
+    {"line_no": 3, "sku": "MN-3300", "description": "27-inch LED Monitor", "qty": 10, "unit_price": 145.00},
+    {"line_no": 4, "sku": "CH-4410", "description": "Ergonomic Office Chair", "qty": 5, "unit_price": 210.00},
+    {"line_no": 5, "sku": "DK-5520", "description": "Standing Desk Converter", "qty": 8, "unit_price": 95.00}
+  ]
+}
