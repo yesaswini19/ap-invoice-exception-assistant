@@ -1,10 +1,4 @@
-"""
-Generates a synthetic vendor invoice PDF (invoice.pdf) that intentionally
-diverges from sample_po.json in a few places, so the assistant has real
-exceptions to flag during the demo.
 
-Run:  python sample_data/generate_sample_invoice.py
-"""
 from reportlab.lib import colors
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.units import mm
@@ -24,13 +18,6 @@ elements.append(Paragraph("PO Reference: PO-4521", styles["Normal"]))
 elements.append(Paragraph("Invoice Date: 2026-08-15", styles["Normal"]))
 elements.append(Spacer(1, 10 * mm))
 
-# Header row + line items.
-# Deliberate mismatches vs sample_po.json:
-#  - NB-1001: qty invoiced 55 vs PO 50            (QTY mismatch)
-#  - PN-2003: unit price 8.75 vs PO 8.00           (PRICE mismatch)
-#  - MN-3300: matches PO exactly                   (no mismatch, control line)
-#  - CH-4410: qty invoiced 5, unit price 210.00, but tax charged is wrong (TAX mismatch)
-#  - DK-5520: line missing from invoice entirely    (MISSING line -> under-billed, still flag for review)
 
 data = [
     ["Line", "SKU", "Description", "Qty", "Unit Price", "Line Total", "Tax"],

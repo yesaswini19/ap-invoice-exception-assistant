@@ -1,18 +1,4 @@
-"""
-extraction.py
-Extracts header fields + structured line items from a vendor invoice PDF.
 
-Strategy (deliberately layered so the extractor degrades gracefully):
-  1. Try pdfplumber's native table detection (works for clean, ruled tables
-     like the sample invoice — fast, deterministic, no API cost).
-  2. If no table is found (e.g. scanned image or irregular layout), fall back
-     to extracting raw text and parsing it with a Claude call constrained to
-     return strict JSON matching our schema. This handles messier real-world
-     invoices without changing the interface the rest of the app relies on.
-
-Either path returns the same shape, so comparison.py never needs to know
-which extraction method was used.
-"""
 import json
 import re
 import os

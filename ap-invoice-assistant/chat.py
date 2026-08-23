@@ -1,18 +1,4 @@
-"""
-chat.py
-Answers reviewer questions like "why was invoice #123 flagged?" or
-"why was line 2 flagged?".
 
-Design choice: the exception detail strings already come out of
-comparison.py fully grounded in real field values (see comparison.py).
-This module's job is only to (a) figure out which line(s) the reviewer is
-asking about, and (b) present the relevant exception details in plain
-English. If an ANTHROPIC_API_KEY is available we ask Claude to smooth the
-phrasing — but we hand it ONLY the already-computed exception records and
-explicitly forbid it from introducing any fact not present in them. This
-keeps the answer source-grounded rather than a generic LLM guess, per the
-assessment's evaluation criteria.
-"""
 import os
 import re
 

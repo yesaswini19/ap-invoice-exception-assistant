@@ -1,9 +1,4 @@
-"""
-comparison.py
-Deterministic matching + exception detection between an extracted invoice
-and a purchase order. No LLM involved here on purpose — the flags must be
-reproducible and auditable, not a black-box model opinion.
-"""
+
 
 PRICE_TOLERANCE_PCT = 0.02   # 2% price variance allowed
 QTY_TOLERANCE_UNITS = 0      # exact qty match required
